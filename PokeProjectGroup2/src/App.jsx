@@ -1,13 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, React } from "react";
+import { RouterProvider } from "react-router-dom";
 import './App.css'
+import { MyContext } from "./context";
+import router from "./router/index";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  //INISIALISASI GLOBAL STATE 
+
+  const [data, setData] = useState(null)
+
+
+
+
+  //INISIALISASI GLOBAL FUNCTION DISINI
+  const showItWork = ()=>{
+    setData("INI JALAN")
+  }
 
   return (
-    <><h1>POKE-PROJECT</h1></>
+    <MyContext.Provider
+    value={{
+      data,
+      setData,
+      showItWork
+    }}
+  >
+    <RouterProvider router={router} />
+  </MyContext.Provider>
   )
 }
 
