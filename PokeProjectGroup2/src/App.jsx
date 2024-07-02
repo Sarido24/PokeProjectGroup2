@@ -1,4 +1,5 @@
 import { useState, React } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { RouterProvider } from "react-router-dom";
 import './App.css'
 import { MyContext } from "./context";

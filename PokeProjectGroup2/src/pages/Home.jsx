@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { MyContext } from "../context"
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -10,7 +11,7 @@ export default function Home(){
         <>
         <div>
         <h1>Home</h1>
-        <button onClick={showItWork} style={{padding: "10px"}}>Test</button>
+        <Button onClick={showItWork} variant="secondary" >Test</Button>
         {data && 
         <p>{data}</p>}
 
