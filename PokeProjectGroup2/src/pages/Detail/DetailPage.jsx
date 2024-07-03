@@ -82,6 +82,17 @@ function DetailPage() {
                             <span className={styles.abilityItemTitle}>Chlorophyll</span>
                         </div>
                     </div>
+                    <div className={styles.pokemonBreed}>
+                        <h2>Breeding</h2>
+                        <div className={styles.breedItem}>
+                            <span className={styles.breedItemTitle}>Egg Groups:</span>
+                            <span className={styles.breedItemValue}>Monster, Grass</span>
+                        </div>
+                        <div className={styles.breedItem}>
+                            <span className={styles.breedItemTitle}>Egg Cycle:</span>
+                            <span>20 cycles</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
