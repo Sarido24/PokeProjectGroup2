@@ -1,0 +1,206 @@
+.main{
+    height: 50vh;
+    background-image: url('../../assets/bgPokemon.png');
+    background-size: cover;
+    display: flex;
+}
+
+.mainLeft{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.mainPokemonImage{
+    margin-right: 100px;
+}
+
+.mainRight{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cardName{
+    width: 523px;
+    height: 146px;
+    background: transparent;
+    border: 1px solid #45F882;
+    border-radius: 30px;
+    padding: 30px;
+    margin-right: 450px;
+}
+
+.cardName p{
+    color: #969EB2;
+    margin: 5px;
+}
+
+.cardStatus{
+    width: 523px;
+    height: 146px;
+    background: transparent;
+    border: 1px solid #45F882;
+    border-radius: 30px;
+    padding: 30px;
+    margin-right: 450px;
+}
+
+.cardStatus p{
+    color: #969EB2;
+    margin: 5px;
+}
+
+.cardStatus h3{
+    margin: 5px;
+}
+
+.evolutionSection{
+    height: 20vh;
+    padding: 30px;
+    margin-bottom: 100px;
+}
+
+.evolutionSection h3{
+    margin-bottom: 30px;
+}
+
+.evolutionTable{
+    height: 15vh;
+    background: #0F1C23;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    border: 1px solid #45F882;
+}
+
+.evo1{
+    grid-column: span 3/ span 3;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    font-size: 24px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+.evo1 h2{
+    margin-top: 14px;
+    margin-left: 12px;
+}
+
+.evo2{
+    grid-column: span 3/ span 3;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.evo2 h2{
+    margin-top: 14px;
+    margin-left: 12px;
+}
+
+.evo3{
+    grid-column: span 3/ span 3;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.evo3 h2{
+    margin-top: 14px;
+    margin-left: 12px;
+}
+
+.second{
+    height: 80vh;
+    display: flex;
+}
+
+.secondLeft{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+.pokemonAbout {
+    width: 93%;
+    background: #0F1C23;
+    border-radius: 30px;
+    padding: 20px;
+    color: #FFFFFF;
+    border: 1px solid #45F882;
+}
+
+.pokemonAboutItem {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.pokemonAboutItem:last-child {
+    margin-bottom: 0;
+}
+
+.pokemonAboutItemTitle {
+    color: #969EB2;
+}
+
+.secondRight{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+.pokemonAbilities {
+    width: 93%;
+    background: #0F1C23;
+    border-radius: 30px;
+    padding: 20px;
+    color: #FFFFFF;
+    border: 1px solid #45F882;
+}
+
+.pokemonAbilities h2 {
+    border-bottom: 1px solid #2C3E50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.abilityItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.abilityItem:last-child {
+    margin-bottom: 0;
+}
+
+.abilityItemTitle {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
