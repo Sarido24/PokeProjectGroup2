@@ -1,14 +1,15 @@
-// src/Navbar.js
+// src/Navbar.jsx
 import React from 'react';
-import { Navbar, Nav, Button, Container, Row, Col } from 'react-bootstrap';
-import logo from "../assets/logo.png"
+import { Navbar, Nav, Button, Container } from 'react-bootstrap';
+import logo from "../assets/logo.png";
+import styles from "../components/Navbar.module.css";
 
 const MainNavbar = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="custom-navbar">
+    <Navbar bg="dark" variant="dark" expand="lg" className={styles.customNavbar}>
       <Container fluid>
-        <Navbar.Brand href="/" className="p-2">
-          <a href="/">
+        <Navbar.Brand href="/" className={`p-2 d-flex align-items-center ${styles.navbarBrand}`}>
+          <a href="/" className="d-flex align-items-center text-decoration-none">
             <img
               src={logo}
               width="50"
@@ -16,22 +17,22 @@ const MainNavbar = () => {
               className="d-inline-block align-top"
               alt="Logo"
             />
-            Dex
+            <span className={styles.navbarBrandText}>Pokemon Dex</span>
           </a>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
-          <Nav className="mx-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/evolution">Evolution</Nav.Link>
-            <Nav.Link href="/detail">Detail</Nav.Link>
-            <Nav.Link href="#">Statistic</Nav.Link>
-            <Nav.Link href="#">Compare</Nav.Link>
-            <Nav.Link href="#">Types</Nav.Link>
-            <Nav.Link href="#">About Us</Nav.Link>
+        <Navbar.Collapse id="basic-navbar-nav" className={styles.navbarNav}>
+          <Nav className="">
+            <Nav.Link href="/" className={styles.navLink}>Home</Nav.Link>
+            <Nav.Link href="/evolution" className={styles.navLink}>Evolution</Nav.Link>
+            <Nav.Link href="/detail" className={styles.navLink}>Detail</Nav.Link>
+            <Nav.Link href="#" className={styles.navLink}>Statistic</Nav.Link>
+            <Nav.Link href="#" className={styles.navLink}>Compare</Nav.Link>
+            <Nav.Link href="#" className={styles.navLink}>Types</Nav.Link>
+            <Nav.Link href="#" className={styles.navLink}>About Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Button variant="success" className="create-team-btn ml-auto">
+        <Button variant="success" className={`ml-auto ${styles.createTeamBtn}`}>
           Create Team
         </Button>
       </Container>

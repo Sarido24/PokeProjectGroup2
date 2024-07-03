@@ -1,0 +1,79 @@
+.customNavbar {
+    background-color: #000;
+    border-bottom: 2px solid #ffaa00;
+    background-image: url("../assets/bgNav.png");
+    background-size: cover;
+  }
+  
+  .navbarNav {
+    flex: 1;
+    justify-content: center;
+    margin-right: 30px;
+  }
+  
+  .navbarBrand {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+  }
+  
+  .navbarBrandText {
+    font-size: 25px;
+    color: white;
+    margin-left: 10px;
+  }
+  
+  .navLink {
+    color: #fff !important;
+    margin-right: 20px;
+  }
+  
+  .createTeamBtn {
+    background-color: #00ff00;
+    border: none;
+    margin-left: auto;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    padding: 10px 40px;
+    font-size: 1rem; 
+    clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .createTeamBtn::before,
+  .createTeamBtn::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+  }
+  
+  .createTeamBtn::before {
+    left: 10px;
+    transform: rotate(45deg);
+    width: 15px;
+    height: 2px;
+    top: 50%;
+    margin-top: -1px;
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+  }
+  
+  .createTeamBtn::after {
+    right: 10px;
+    transform: rotate(-45deg);
+    width: 15px;
+    height: 2px;
+    top: 50%;
+    margin-top: -1px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+  
+  .createTeamBtn:hover {
+    background-color: #00cc00;
+  }
