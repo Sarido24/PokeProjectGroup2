@@ -30,16 +30,12 @@ a {
 .custom-navbar {
     background-color: #000;
     border-bottom: 2px solid #ffaa00;
-}
+};
 
-.custom-navbar .navbar-brand {
-    display: flex;
-    align-items: center;
-}
-
-.custom-navbar .navbar-brand img {
-    margin-right: 10px;
-}
+.custom-navbar .navbar-nav {
+    flex: 1;
+    justify-content: center;
+  }
 
 .custom-navbar .nav-link {
     color: #fff !important;
@@ -50,7 +46,7 @@ a {
     background-color: #00ff00;
     /* Bright green background */
     border: none;
-    margin-left: 20px;
+    margin-left: auto;
 }
 
 .custom-navbar .create-team-btn:hover {
