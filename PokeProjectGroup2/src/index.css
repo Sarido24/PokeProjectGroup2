@@ -1,0 +1,55 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #0B0E13;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --primary: #6a59ff;
+    --white: #ffffff;
+    --bg: #f5f5f5;
+}
+
+body{
+    background-color: #0B0E13;
+    color: white;
+}
+
+a {
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: inherit;
+}
+
+.custom-navbar {
+    background-color: #000;
+    border-bottom: 2px solid #ffaa00;
+};
+
+.custom-navbar .navbar-nav {
+    flex: 1;
+    justify-content: center;
+  }
+
+.custom-navbar .nav-link {
+    color: #fff !important;
+    margin-right: 20px;
+}
+
+.custom-navbar .create-team-btn {
+    background-color: #00ff00;
+    /* Bright green background */
+    border: none;
+    margin-left: auto;
+}
+
+.custom-navbar .create-team-btn:hover {
+    background-color: #00cc00;
+    /* Slightly darker green on hover */
+}

@@ -1,15 +1,14 @@
 import { Outlet, Link } from "react-router-dom";
-
+import Navbar from '../components/Navbar'
 
 
 export default function Layout(){
     return(
         <>
         <div >
-            <Link style={{padding:"5px"}} to={"/"}>Home</Link>
-            <Link style={{padding:"5px"}} to={"/evolution"}>evolution</Link>
+            <Navbar />
+            <Outlet />
         </div>
-        <Outlet />
         </>
     )
 }
