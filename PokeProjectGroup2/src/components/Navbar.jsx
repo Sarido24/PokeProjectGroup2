@@ -1,6 +1,7 @@
 // src/Navbar.jsx
 import React from 'react';
 import { Navbar, Nav, Button, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from "../assets/logo.png";
 import styles from "../components/Navbar.module.css";
 
@@ -32,9 +33,11 @@ const MainNavbar = () => {
             <Nav.Link href="#" className={styles.navLink}>About Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Button variant="success" className={`ml-auto ${styles.createTeamBtn}`}>
-          Create Team
-        </Button>
+        <Link to="/detail">
+          <Button variant="success" className={`ml-auto ${styles.createTeamBtn}`}>
+            Create Team
+          </Button>
+        </Link>
       </Container>
     </Navbar>
   );
