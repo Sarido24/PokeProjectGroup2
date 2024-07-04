@@ -5,32 +5,59 @@ import './index.css';
 import './App.css'
 import { MyContext } from "./context";
 import router from "./router/index";
+import axios from 'axios';
 
 function App() {
 
-  //INISIALISASI GLOBAL STATE 
+  // INISIALISASI GLOBAL STATE
+  const [data, setData] = useState(null);
+  const [speciesData, setSpeciesData] = useState(null);
+  const [evolutionData, setEvolutionData] = useState(null);
+  const [evolutionSprites, setEvolutionSprites] = useState({});
 
-  const [data, setData] = useState(null)
+  // FUNGSI UNTUK MENGAMBIL DATA POKEMON DARI API
+  const fetchPokemonData = async (idOrName) => {
+    try {
+      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${idOrName}`);
+      const speciesResponse = await axios.get(response.data.species.url);
+      setData(response.data);
+      setSpeciesData(speciesResponse.data);
 
+      if (speciesResponse.data.evolution_chain.url) {
+        const evolutionResponse = await axios.get(speciesResponse.data.evolution_chain.url);
+        setEvolutionData(evolutionResponse.data);
 
+        // Mengambil sprite untuk setiap Pokémon di proses evolusi
+        let evoData = evolutionResponse.data.chain;
+        const sprites = {};
+        
+        while (evoData) {
+          const evoPokemonResponse = await axios.get(`https://pokeapi.co/api/v2/pokemon/${evoData.species.name}`);
+          sprites[evoData.species.name] = evoPokemonResponse.data.sprites.other['official-artwork'].front_default;
+          evoData = evoData.evolves_to[0];
+        }
 
-
-  //INISIALISASI GLOBAL FUNCTION DISINI
-  const showItWork = ()=>{
-    setData("INI JALAN")
-  }
+        setEvolutionSprites(sprites);
+      }
+    } catch (error) {
+      console.error('Error fetching Pokémon data:', error);
+    }
+  };
 
   return (
     <MyContext.Provider
-    value={{
-      data,
-      setData,
-      showItWork
-    }}
-  >
-    <RouterProvider router={router} />
-  </MyContext.Provider>
+      value={{
+        data,
+        setData,
+        speciesData,
+        fetchPokemonData,
+        evolutionData,
+        evolutionSprites
+      }}
+    >
+      <RouterProvider router={router} />
+    </MyContext.Provider>
   )
 }
 
-export default App
+export default App;

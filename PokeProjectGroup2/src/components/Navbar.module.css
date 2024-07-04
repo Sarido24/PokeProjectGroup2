@@ -2,6 +2,7 @@
     background-color: #000;
     position: relative; 
     background-image: url("../assets/bgNav.png");
+    background-size: cover;
   }
   
   .customNavbar::after {
@@ -10,13 +11,13 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 4px; /* Adjust the height as needed */
+    height: 4px; 
     background: linear-gradient(
       to right,
-      #ffaa00 25%, /* 25% of the width */
-      #ffaa00 25%, /* Stops at 25% */
-      #45F882 25%, /* Red starts at 25% */
-      #45F882 100% /* Ends at 100% */
+      #ffaa00 25%,
+      #ffaa00 25%,
+      #45F882 25%,
+      #45F882 100% 
     );
   }
   

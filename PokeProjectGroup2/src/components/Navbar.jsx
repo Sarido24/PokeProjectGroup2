@@ -26,14 +26,13 @@ const MainNavbar = () => {
           <Nav className="">
             <Nav.Link href="/" className={styles.navLink}>Home</Nav.Link>
             <Nav.Link href="/evolution" className={styles.navLink}>Evolution</Nav.Link>
-            <Nav.Link href="/detail" className={styles.navLink}>Detail</Nav.Link>
             <Nav.Link href="#" className={styles.navLink}>Statistic</Nav.Link>
             <Nav.Link href="#" className={styles.navLink}>Compare</Nav.Link>
             <Nav.Link href="#" className={styles.navLink}>Types</Nav.Link>
             <Nav.Link href="#" className={styles.navLink}>About Us</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Link to="/detail">
+        <Link to="/">
           <Button variant="success" className={`ml-auto ${styles.createTeamBtn}`}>
             Create Team
           </Button>

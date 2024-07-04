@@ -16,7 +16,7 @@ const router = createBrowserRouter([
           element: <Evolution />,
       },
       {
-        path: "/detail",
+        path: "/detail/:id",
         element: <Detail />
       },
   ]
