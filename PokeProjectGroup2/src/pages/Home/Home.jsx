@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import PokemonCard from "../../components/PokemonCard";
 import styles from "./Home.module.css";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -40,19 +39,10 @@ const Home = () => {
         <h1>POKEMON WORLD</h1>
       </div>
 
-      {/* <div className="pokemon-list" style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {pokemonList.map(pokemon => (
-          <PokemonCard key={pokemon.id} id={pokemon.id} name={pokemon.name} />
-        ))}
-      </div> */}
       <div className={styles.listContainer}>
-        {allPokemons?.map((el, i) => {
-          return (
-           <HomeCards props={el} index={i}/>
-          );
-        })}
-
-       
+        {allPokemons?.map((el, i) => (
+          <HomeCards props={el} index={i} key={i} />
+        ))}
       </div>
     </div>
     //     <div className={styles.container}>
