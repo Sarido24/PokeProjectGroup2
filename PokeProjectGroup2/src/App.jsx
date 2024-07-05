@@ -1,4 +1,4 @@
-import { useState, React } from "react";
+import { useState, React, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { RouterProvider } from "react-router-dom";
 import './index.css';
@@ -11,6 +11,7 @@ function App() {
 
   // INISIALISASI GLOBAL STATE
   const [data, setData] = useState(null);
+  const [allPokemons, setAllPokemons] = useState(null);
   const [speciesData, setSpeciesData] = useState(null);
   const [evolutionData, setEvolutionData] = useState(null);
   const [evolutionSprites, setEvolutionSprites] = useState({});
@@ -44,6 +45,24 @@ function App() {
     }
   };
 
+  const getAllPokemon = async ()=>{
+    try {
+      const response = await axios ({
+        method: 'get',
+        url: "https://pokeapi.co/api/v2/pokemon"
+      })
+      if(response.data){
+        setAllPokemons(response.data.results)
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(()=>{
+    getAllPokemon()
+  },[])
+
   return (
     <MyContext.Provider
       value={{
@@ -52,7 +71,8 @@ function App() {
         speciesData,
         fetchPokemonData,
         evolutionData,
-        evolutionSprites
+        evolutionSprites,
+        allPokemons,
       }}
     >
       <RouterProvider router={router} />

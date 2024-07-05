@@ -27,3 +27,54 @@ a {
     text-decoration: inherit;
 }
 
+.listWrapper {
+    font-family: 'Montserrat', sans-serif !important;
+    height: 200px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem;
+    background-color: black;
+    opacity: 90%;
+    cursor: pointer;
+    box-shadow: 1.5px 1.5px  #00ff00;
+    border-radius: 0px 20px 0px 20px;
+   
+  
+  }
+  .listWrapper h1 {
+    font-size: x-large;
+  text-transform: uppercase;
+   
+  
+  }
+  
+  .listWrapper img {
+    position: absolute; 
+    top: 0%;
+    right: 0%;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .listWrapper span {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: rgb(19, 166, 19);
+    margin-left: 2rem;
+    
+  }
+  
+  .listWrapper:hover{
+    background-color: #43ac43;
+    transition: background-color 0.5s;
+  }
+  
+  .listWrapper:active{
+    background-color: #00ff00;
+    transform: scale(1.1);
+    transition: transform 0.5s;
+    
+  }
