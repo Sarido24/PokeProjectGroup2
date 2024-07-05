@@ -1,23 +1,28 @@
-.main{
+/* General styles for the Detail Page */
+.main {
     height: 50vh;
     background-image: url('../../assets/bgPokemon.png');
     background-size: cover;
     display: flex;
+    flex-wrap: wrap;
 }
 
-.mainLeft{
+.mainLeft {
     width: 50%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 100%;
+    padding: 20px;
 }
 
-.mainPokemonImage{
+.mainPokemonImage {
     margin-right: 100px;
+    max-width: 100%;
+    height: auto;
 }
 
-.mainRight{
+.mainRight {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -25,67 +30,59 @@
     height: 100%;
     flex-direction: column;
     gap: 30px;
+    padding: 20px;
 }
 
-.cardName{
-    width: 523px;
-    height: 146px;
+.cardName,
+.cardStatus {
+    width: 90%;
+    max-width: 523px;
+    height: auto;
     background: transparent;
     border: 1px solid #45F882;
     border-radius: 30px;
     padding: 30px;
-    margin-right: 450px;
 }
 
-.cardName p{
+.cardName p,
+.cardStatus p {
     color: #969EB2;
     margin: 5px;
 }
 
-.cardStatus{
-    width: 523px;
-    height: 146px;
-    background: transparent;
-    border: 1px solid #45F882;
-    border-radius: 30px;
-    padding: 30px;
-    margin-right: 450px;
-}
-
-.cardStatus p{
-    color: #969EB2;
+.cardStatus h3 {
     margin: 5px;
 }
 
-.cardStatus h3{
-    margin: 5px;
-}
-
-.evolutionSection{
-    height: 20vh;
+.evolutionSection {
+    height: auto;
     padding: 30px;
     margin-bottom: 100px;
+    text-align: center;
 }
 
-.evolutionSection h3{
+.evolutionSection h3 {
     margin-bottom: 30px;
 }
 
-.evolutionTable{
-    height: 15vh;
+.evolutionTable {
     background: #0F1C23;
     border-radius: 20px;
     display: grid;
-    grid-template-columns: repeat(9, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     border: 1px solid #45F882;
+    padding: 20px;
 }
 
-.evo1{
-    grid-column: span 3/ span 3;
-    padding: 50px;
+.evo1,
+.evo2,
+.evo3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .arrow {
@@ -95,107 +92,66 @@
     align-items: center;
 }
 
-
-.evo1 h2{
+.evo1 h2,
+.evo2 h2,
+.evo3 h2 {
     margin-top: 14px;
     margin-left: 12px;
 }
 
-.evo2{
-    grid-column: span 3/ span 3;
-    padding: 50px;
+.second {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    height: auto;
 }
 
-.evo2 h2{
-    margin-top: 14px;
-    margin-left: 12px;
-}
-
-.evo3{
-    grid-column: span 3/ span 3;
-    padding: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.evo3 h2{
-    margin-top: 14px;
-    margin-left: 12px;
-}
-
-.second{
-    height: 80vh;
-    display: flex;
-}
-
-.secondLeft{
+.secondLeft,
+.secondRight {
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     height: 100%;
+    padding: 20px;
 }
 
-.pokemonAbout {
-    width: 93%;
+.pokemonAbout,
+.pokemonAbilities,
+.pokemonBreed {
+    width: 90%;
     background: #0F1C23;
     border-radius: 30px;
     padding: 20px;
     color: #FFFFFF;
     border: 1px solid #45F882;
+    margin-bottom: 20px;
 }
 
-.pokemonAboutItem {
+.pokemonAboutItem,
+.abilityItem,
+.breedItem {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
 }
 
-.pokemonAboutItem:last-child {
+.pokemonAboutItem:last-child,
+.abilityItem:last-child,
+.breedItem:last-child {
     margin-bottom: 0;
 }
 
-.pokemonAboutItemTitle {
+.pokemonAboutItemTitle,
+.breedItemTitle {
     color: #969EB2;
 }
 
-.secondRight{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100%;
-}
-
-.pokemonAbilities {
-    width: 93%;
-    background: #0F1C23;
-    border-radius: 30px;
-    padding: 20px;
-    color: #FFFFFF;
-    border: 1px solid #45F882;
-}
-
-.pokemonAbilities h2 {
+.pokemonAbilities h2,
+.pokemonBreed h2 {
     border-bottom: 1px solid #2C3E50;
     padding-bottom: 10px;
     margin-bottom: 20px;
-}
-
-.abilityItem {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.abilityItem:last-child {
-    margin-bottom: 0;
 }
 
 .abilityItemTitle {
@@ -205,32 +161,55 @@
     gap: 5px;
 }
 
-.pokemonBreed {
-    width: 93%;
-    background: #0F1C23;
-    border-radius: 30px;
-    padding: 20px;
-    color: #FFFFFF;
-    border: 1px solid #45F882;
-    margin-top: 30px;
-}
+/* Responsive styles for mobile devices */
+@media screen and (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        height: auto;
+    }
 
-.pokemonBreed h2 {
-    border-bottom: 1px solid #2C3E50;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
+    .mainLeft,
+    .mainRight {
+        width: 100%;
+        justify-content: center;
+        padding: 10px;
+        margin: 0;
+    }
 
-.breedItem {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
+    .mainPokemonImage {
+        margin: 0;
+        width: 100%;
+        max-width: 450px;
+    }
 
-.breedItem:last-child {
-    margin-bottom: 0;
-}
+    .cardName,
+    .cardStatus {
+        width: 100%;
+        margin: 10px 0;
+    }
 
-.breedItemTitle {
-    color: #969EB2;
+    .evolutionSection {
+        padding: 10px;
+        margin-bottom: 50px;
+    }
+
+    .evolutionTable {
+        grid-template-columns: 1fr;
+    }
+
+    .second {
+        flex-direction: column;
+    }
+
+    .secondLeft,
+    .secondRight {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .pokemonAbout,
+    .pokemonAbilities,
+    .pokemonBreed {
+        width: 100%;
+    }
 }
