@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:thin,extra-light,light,100,200,300,400,500,600,700,800');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  width: 100%;
+  min-height: 100vh; 
+  background: url('../../assets/bg-pokemon3.jpg');
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.heading {
+  display: flex;
+  height: 309px;
+  width: 100%;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif !important;
+  padding: 5rem;
+  opacity: 80%;
+}
+
+.heading p {
+  color: #00ff00;
+  font-size: large;
+}
+
+.heading h1 {
+  width: 600px;
+  background-color: black;
+  padding: 30px;
+  border-radius: 3px;
+  box-shadow: 1rem 0.5rem #00ff00;
+}
+
+.heading:hover {
+  opacity: 100%;
+}
+
+.listContainer {
+  width: 100%;
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+
+/* Responsive design for tablets */
+@media screen and (max-width: 1024px) {
+  .listContainer {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+  }
+}
+
+/* Responsive design for mobile phones */
+@media screen and (max-width: 768px) {
+  .listContainer {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 1rem;
+  }
+
+  .heading {
+    padding: 2rem;
+  }
+
+  .heading h1 {
+    width: 100%;
+  }
+}
