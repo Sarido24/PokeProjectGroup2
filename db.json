@@ -1,0 +1,17 @@
+{
+    "Pokemon": [
+      {
+        "id": "1",
+        "CreateTeam": "naruto",
+        "Pokemon": "Pikachu"
+      },
+      {
+        "id": "2",
+        "CreateTeam": "Naruto",
+        "Pokemon": [
+          "Pokemon",
+          "Pikachu"
+        ]
+      }
+    ]
+  }
