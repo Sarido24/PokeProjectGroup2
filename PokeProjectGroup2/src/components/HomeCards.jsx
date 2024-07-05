@@ -21,13 +21,12 @@ export default function HomeCards({ props, index }) {
   return (
     currentPokemon && (
       <Link to={`/detail/${currentPokemon.id}`}>
-      <div className="listWrapper">
-        
+        <div className="listWrapper">
           <h1>{props.name}</h1>
           <p>{currentPokemon.types.map(type => type.type.name).join(', ')}</p>
           <img src={currentPokemon.sprites.other['official-artwork'].front_default} alt="pokemon" />
           <span></span>
-      </div>
+        </div>
       </Link>
     )
   );
