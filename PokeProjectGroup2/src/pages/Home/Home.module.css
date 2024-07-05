@@ -55,10 +55,10 @@
 
 
 
-/* @media screen and (max-widt: 768px){
+@media (max-widt: 768px){
   .listContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-} */
+}
 

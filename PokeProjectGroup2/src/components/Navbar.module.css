@@ -1,6 +1,8 @@
 .customNavbar {
   background-color: #000;
-  position: relative; 
+  position: sticky;
+  top: 0%;
+  z-index: 10;
   background-image: url("../assets/bgNav.png");
   background-size: cover;
 }

@@ -15,6 +15,7 @@ function App() {
   const [speciesData, setSpeciesData] = useState(null);
   const [evolutionData, setEvolutionData] = useState(null);
   const [evolutionSprites, setEvolutionSprites] = useState({});
+  const [URL, setURL] = useState("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20")
 
   // FUNGSI UNTUK MENGAMBIL DATA POKEMON DARI API
   const fetchPokemonData = async (idOrName) => {
@@ -49,10 +50,11 @@ function App() {
     try {
       const response = await axios ({
         method: 'get',
-        url: "https://pokeapi.co/api/v2/pokemon"
+        url: URL
       })
       if(response.data){
-        setAllPokemons(response.data.results)
+        setAllPokemons(response.data)
+        console.log(response);
       }
     } catch (error) {
       console.log(error);
@@ -61,7 +63,7 @@ function App() {
 
   useEffect(()=>{
     getAllPokemon()
-  },[])
+  },[URL])
 
   return (
     <MyContext.Provider
@@ -73,6 +75,9 @@ function App() {
         evolutionData,
         evolutionSprites,
         allPokemons,
+        getAllPokemon,
+        setURL,
+        URL
       }}
     >
       <RouterProvider router={router} />

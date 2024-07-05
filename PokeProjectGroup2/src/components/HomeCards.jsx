@@ -1,9 +1,11 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { MyContext } from "../context";
 
 export default function HomeCards({ props, index }) {
   const [currentPokemon, setCurrentPokemon] = useState(null);
+  const {allPokemons} = useContext(MyContext)
 
   async function pokemonData() {
     try {
@@ -14,9 +16,10 @@ export default function HomeCards({ props, index }) {
     }
   }
 
+  console.log(URL);
   useEffect(() => {
     pokemonData();
-  }, []);
+  }, [allPokemons]);
 
   return (
     currentPokemon && (
